@@ -8,10 +8,11 @@ from .agent import MyAgent, State
 
 # Model for infection spread
 class InfectionModel(Model):
-    def __init__(self, population=10, width=10, height=10, ptrans=0.5,
+    def init(self, population=10, width=10, height=10, ptrans=0.5,
                  death_rate=0.02, recovery_days=21,
-                 recovery_sd=7):
+                 recovery_sd=7, initial_infected=5):
 
+        self.result = []
         self.agents = population
         self.recovery_days = recovery_days
         self.recovery_sd = recovery_sd
@@ -33,10 +34,10 @@ class InfectionModel(Model):
             self.grid.place_agent(new_agent, (x, y))
 
             # Make some agents infected at start
-            infected = np.random.choice([0, 1], p=[0.98, 0.02])
-            if infected == 1:
+            if initial_infected > 0:
                 new_agent.state = State.INFECTED
                 new_agent.recovery_time = self.get_recovery_time()
+                initial_infected -= 1
 
         self.datacollector = DataCollector(
             agent_reporters={"State": "state"})
