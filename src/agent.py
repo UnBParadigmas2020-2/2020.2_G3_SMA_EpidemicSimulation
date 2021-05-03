@@ -15,8 +15,8 @@ class State(enum.IntEnum):
 
 # An agent in an epidemic model
 class MyAgent(Agent):
-    def __init__(self, unique_id, model):
-        super().__init__(unique_id, model)
+    def init(self, unique_id, model):
+        super().init(unique_id, model)
         self.age = self.random.normalvariate(20, 40)
         self.state = State.SUSCEPTIBLE
         self.infection_time = 0
@@ -35,16 +35,11 @@ class MyAgent(Agent):
         if self.state == State.INFECTED:
             drate = self.model.death_rate
             alive = np.random.choice([0, 1], p=[drate, 1-drate])
-            if alive == 0:
-                self.state = State.DECEASED
-                # self.model.schedule.remove(self)
             t = self.model.schedule.time-self.infection_time
-            if t >= self.model.get_recovery_time():
+            if alive == 0 and t > self.random.normalvariate(1, 21):
                 self.state = State.DECEASED
-                # self.model.schedule.remove(self)
-            elif t >= 13:
-                if self.random.normalvariate(0, 10) >= 5:
-                    self.state = State.RECOVERED
+            if t >= self.model.get_recovery_time():
+                self.state = State.RECOVERED
 
     # Find close contacts and infect
     def contact(self):
@@ -56,7 +51,6 @@ class MyAgent(Agent):
                 if self.state is State.INFECTED and other.state is State.SUSCEPTIBLE:
                     other.state = State.INFECTED
                     other.infection_time = self.model.schedule.time
-                    other.recovery_time = self.model.get_recovery_time()
 
     def step(self):
         self.status()
