@@ -8,7 +8,7 @@ from .agent import MyAgent, State
 
 # Model for infection spread
 class InfectionModel(Model):
-    def init(self, population=10, width=10, height=10, ptrans=0.5,
+    def __init__(self, population=10, width=10, height=10, ptrans=0.5,
                  death_rate=0.02, recovery_days=21,
                  recovery_sd=7, initial_infected=5):
 

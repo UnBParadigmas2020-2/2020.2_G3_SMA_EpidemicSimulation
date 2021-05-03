@@ -15,8 +15,8 @@ class State(enum.IntEnum):
 
 # An agent in an epidemic model
 class MyAgent(Agent):
-    def init(self, unique_id, model):
-        super().init(unique_id, model)
+    def __init__(self, unique_id, model):
+        super().__init__(unique_id, model)
         self.age = self.random.normalvariate(20, 40)
         self.state = State.SUSCEPTIBLE
         self.infection_time = 0
