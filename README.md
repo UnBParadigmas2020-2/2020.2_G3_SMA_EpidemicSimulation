@@ -11,10 +11,19 @@
 | 17/0163571 | Murilo Loiola Dantas |
 
 ## Sobre 
-O Epidemic Simulation é um projeto SMA que utiliza de um modelo baseado em agente (ABM, sigla em inglês) para simular o fenômeno de infecção que ocorre entre agentes, com alguns valores críticos como a taxa de mortalidade, tempo de recuperação, taxa de infecção, tamanho da população e tempo de duração. A visualização dessa simulação se da por dois gráficos, um gráfico de linhas que é atualizado em tempo real que mostra a quantidade de pessoas infectadas, sucetíveis à infecção, recuperadas e mortas. O outro gráfico é um *Grid* que atualiza também em tempo real e mostra o espaço amostral dinâmico.
+<p align="justify">&emsp;&emsp;O Epidemic Simulation é um projeto SMA que utiliza um modelo baseado em agente (ABM, sigla em inglês) para simular o fenômeno de propagação de uma doença que ocorre entre agentes, utilizando alguns valores críticos como a taxa de mortalidade, tempo de recuperação, taxa de infecção, tamanho da população e tempo de duração.</p>
+
+<p align="justify">&emsp;&emsp;A visualização dessa simulação se dá por dois gráficos: um gráfico de linhas que é atualizado em tempo real e apresenta a quantidade de pessoas infectadas, sucetíveis à infecção, recuperadas e mortas. O outro gráfico é um *Grid* atualizado também em tempo real e que mostra o espaço amostral dinâmico com os agentes em movimento.</p>
+
+<p align="justify">&emsp;&emsp;O modelo utilizado para a simulação de propagação foi o SIR (Susceptible, Infected, Removed) modificado, subdividindo a categoria REMOVED em RECOVERED e DECEASED. O SIR é o modelo mais simples para simulação de epidemias, pois desconsidera uma gama de fatores que impactam como a doença se espalha (decretos governamentais, capacidade do sistema de saúde, entre outros).</p>
 
 ## Screenshots
-Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
+Programa em stand-by, aguardando entrada do usuário:
+![Stand-by](images/stand_by.png)
+
+
+Simulação finalizada com parâmetros padrão:
+![Finished](images/finished.png)
 
 ## Instalação 
 **Linguagens**: Python<br>
@@ -23,13 +32,25 @@ Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
 Insira um manual ou um script para auxiliar ainda mais.
 
 ## Uso 
-Explique como usar seu projeto, caso haja algum passo a passo após o comando de execução.
+Ao executar o programa, uma aba será aberta no navegador padrão.
+
+O usuário será apresentado com o estado inicial do programa, conforme a primeira figura.
+
+O usuário pode utilizar os sliders presentes abaixo das plotagens para para configurar os parâmetros da simulação.
+
+Clicar no botão Start Simulation iniciará a simulação. O usuário pode acompanhar os valores da simulação no gráfico de linhas. O plot de células apresenta os agentes em movimento.
 
 ## Vídeo
 Adicione 1 ou mais vídeos com a execução do projeto.
 
 ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas a seguir.
+Só é possível rodar uma simulação por execução do programa.
+
+As cores representam os mesmos estados em ambas as plotagens.
+
+No plot de células, mais de um agente pode ocupar a mesma célula. Um agente infectado pode infectar um agente suscetível que estiver na mesma célula que ele.
 
 ## Fontes
-Caso utilize materiais de terceiros, referencie-os adequadamente.
+> 1. [Biblioteca Mesa para modelagem baseada em agentes.](https://github.com/projectmesa/mesa)
+> 2. [Biblioteca Bokeh para plotagem dinâmica.](https://github.com/bokeh/bokeh)
+> 3. [Exemplo de simulação ABM utilizando Mesa](https://dmnfarrell.github.io/bioinformatics/abm-mesa-python)
