@@ -45,7 +45,6 @@ def plot_states_bokeh(model, title=''):
         glyph = plot.add_glyph(source, line)
         i += 1
         items.append((c, [glyph]))
-
     plot.xaxis.axis_label = 'Step'
     plot.add_layout(Legend(location='center_right',
                            items=items))
