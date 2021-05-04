@@ -65,7 +65,7 @@ def plot_cells_bokeh(model):
     x = [(i, "@%s" % i) for i in columns]
     hover = HoverTool(
         tooltips=x, point_policy='follow_mouse')
-    colors = Category10[3]
+    colors = Category10[4]
     mapper = LinearColorMapper(
         palette=colors, low=df.value.min(), high=df.value.max())
     plot = figure(plot_width=500, plot_height=500, tools=[

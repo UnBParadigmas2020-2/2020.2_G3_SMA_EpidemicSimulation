@@ -17,12 +17,13 @@ class State(enum.IntEnum):
 class MyAgent(Agent):
     def __init__(self, unique_id, model):
         super().__init__(unique_id, model)
-        self.age = self.random.normalvariate(20, 40)
         self.state = State.SUSCEPTIBLE
         self.infection_time = 0
 
     # Move the agent
     def move(self):
+        if self.state == State.DECEASED:
+            return
         possible_steps = self.model.grid.get_neighborhood(
             self.pos,
             moore=True,

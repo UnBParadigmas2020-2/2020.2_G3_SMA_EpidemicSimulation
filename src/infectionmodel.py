@@ -12,7 +12,6 @@ class InfectionModel(Model):
                  death_rate=0.02, recovery_days=21,
                  recovery_sd=7, initial_infected=5):
 
-        self.result = []
         self.agents = population
         self.recovery_days = recovery_days
         self.recovery_sd = recovery_sd
