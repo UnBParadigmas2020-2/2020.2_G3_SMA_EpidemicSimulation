@@ -1,0 +1,9 @@
+version: "3.5"
+services:
+  bokeh:
+    build: .
+    ports:
+      - "5006:5006"
+    command: bokeh serve --show main.py
+    volumes:
+      - .:/app
