@@ -28,7 +28,7 @@ Simulação finalizada com parâmetros padrão:
 ## Instalação 
 **Linguagens**: Python<br>
 **Tecnologias**: Mesa, Bokeh<br>
-Para rodar o projeto na sua máquina, é recomendado que utilize o Docker, devido às dependências do código. Para tal, primeiro garanta que o Docker e o docker-compose estejam instalados, para ter certeza, acesse a documentação dessa ferramenta disponível [aqui](https://docs.docker.com/get-docker/).
+Para rodar o projeto na sua máquina, é recomendado que utilize o Docker, devido às dependências do código. Para tal, primeiro garanta que o Docker e o docker-compose estejam instalados. Para ter certeza, acesse a documentação dessa ferramenta disponível [aqui](https://docs.docker.com/get-docker/).
 
 ### Utilizando o Docker
 Uma vez instalados, rode o seguinte comando no diretório do projeto:
@@ -65,7 +65,7 @@ O usuário pode utilizar os sliders presentes abaixo das plotagens para para con
 Clicar no botão Start Simulation iniciará a simulação. O usuário pode acompanhar os valores da simulação no gráfico de linhas. O plot de células apresenta os agentes em movimento.
 
 ## Vídeo
-Adicione 1 ou mais vídeos com a execução do projeto.
+Para ver o vídeo, basta acessar este [hyperlink](https://youtu.be/NqoX51vtgxo).
 
 ## Outros 
 Só é possível rodar uma simulação por execução do programa.
