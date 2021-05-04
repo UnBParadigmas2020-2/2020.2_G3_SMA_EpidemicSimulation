@@ -28,11 +28,35 @@ Simulação finalizada com parâmetros padrão:
 ## Instalação 
 **Linguagens**: Python<br>
 **Tecnologias**: Mesa, Bokeh<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
-Insira um manual ou um script para auxiliar ainda mais.
+Para rodar o projeto na sua máquina, é recomendado que utilize o Docker, devido às dependências do código. Para tal, primeiro garanta que o Docker e o docker-compose estejam instalados, para ter certeza, acesse a documentação dessa ferramenta disponível [aqui](https://docs.docker.com/get-docker/).
+
+### Utilizando o Docker
+Uma vez instalados, rode o seguinte comando no diretório do projeto:
+```bash
+docker-compose up --build
+```
+
+Caso já exista um container buildado, rode o comando:
+```bash
+docker-compose up
+```
+
+O programa estará disponível no local: localhost:5006/main.
+
+### Utilizando pip3
+Caso prefira não utilizar o Docker para rodar o projeto, ainda é possível instalar todos as dependências utilizadas rodando o seguinte comando:
+```bash
+pip3 install -r requirements.txt
+```
+
+Após a instalação dos módulos, se tudo der certo, use o comando para rodar:
+
+```bash
+bokeh serve --show main.py
+```
 
 ## Uso 
-Ao executar o programa, uma aba será aberta no navegador padrão.
+Ao executar o programa, uma aba será aberta no navegador padrão, na porta 5006.
 
 O usuário será apresentado com o estado inicial do programa, conforme a primeira figura.
 
